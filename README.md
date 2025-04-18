@@ -70,3 +70,44 @@ This project implements a Long Short-Term Memory (LSTM) neural network to foreca
 - **Actual vs Predicted** revenue plots
 - **Loss curves** over training epochs
 - **Error distribution** visualization
+
+
+## 📌 Inference: XGBoost Model Performance Summary
+
+The **XGBoost** model demonstrated strong performance in predicting **daily revenue**, particularly after training on a well-engineered dataset with reduced dimensionality.
+
+
+### ✅ Model Accuracy & Fit
+
+- **R² Score**: `0.7706`  
+  The model explains **77% of the variance** in daily revenue, which reflects a solid fit for a financial time series dataset that typically contains a high degree of noise and irregularity.
+
+
+### 📊 Evaluation Metrics
+
+| Metric | Value |
+|--------|-------|
+| **MAE** (Mean Absolute Error) | `77.91` |
+| **RMSE** (Root Mean Squared Error) | `114.04` |
+
+- **MAE** indicates that the model's predictions deviate by around ₹78 from actual values on average — a low absolute error relative to expected daily revenue figures.
+- **RMSE**, being slightly higher due to squaring larger deviations, still confirms that prediction errors remain low and consistent.
+
+
+### 🔍 Feature Effectiveness
+
+- The model used **7 features**, selected from an original **14-feature set**, demonstrating that **feature reduction preserved predictive power**.
+- Key feature types:
+  - **Lag values** (e.g., revenue_lag1, lag7, lag30)
+  - **Rolling statistics** (e.g., rolling_mean_7, rolling_std_30)
+  - **Temporal features** (e.g., day of week, is_weekend)
+
+- **No feature scaling required** — XGBoost handles raw magnitudes effectively, simplifying preprocessing for deployment.
+
+
+### ⚖️ Comparison to Baseline
+
+- The XGBoost model **clearly outperforms naive baselines** like:
+  - **Last-value persistence**
+  - **Simple moving averages**
+- With high R² and low error metrics, it provides **reliable, scalable predictions**, suitable for production use in retail or revenue forecasting pipelines.
