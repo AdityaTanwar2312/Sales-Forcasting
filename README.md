@@ -29,7 +29,7 @@
 - It effectively modeled the **overall trend** in the data but may underperform on sudden spikes or irregular patterns due to its linear nature.
 - Walk-forward validation ensured realistic performance estimation on unseen data.
 
-![alt text](image-6.png)
+![alt text](plot/image-6.png)
 
 
 ## 🧠 LSTM-Based Time Series Forecasting
