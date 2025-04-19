@@ -9,11 +9,11 @@
 - **Data Resampling:** Aggregated sales data to daily frequency (`df_daily`).
 - **Stationarity Check:** Conducted the Augmented Dickey-Fuller (ADF) test to confirm non-stationarity.
 
-![alt text](image-7.png)
+![alt text](plots/image-7.png)
 
 - **Differencing:** Applied first-order differencing (`d=1`) to make the time series stationary and suitable for ARIMA modeling.
 
-![alt text](image-8.png)
+![alt text](plots/image-8.png)
 
 - **Validation Approach:** Used **walk-forward validation** with an expanding training window on the last **30 days** of data.
 
@@ -29,7 +29,7 @@
 - It effectively modeled the **overall trend** in the data but may underperform on sudden spikes or irregular patterns due to its linear nature.
 - Walk-forward validation ensured realistic performance estimation on unseen data.
 
-![alt text](plot/image-6.png)
+![alt text](plots/image-6.png)
 
 
 ## 🧠 LSTM-Based Time Series Forecasting
@@ -51,8 +51,8 @@ This project implements a Long Short-Term Memory (LSTM) neural network to foreca
   - Rolling statistics: `rolling_mean_7`, `rolling_std_7`, `rolling_mean_30`
   - `cumulative_revenue`, `dayofweek`, and `is_weekend`
 
-  ![alt text](image-4.png)
-  ![alt text](image-5.png)
+  ![alt text](plots/image-4.png)
+  ![alt text](plots/image-5.png)
 - One-hot encoding for categorical features
 
 ### 🧮 Model Architecture
@@ -80,11 +80,11 @@ This project implements a Long Short-Term Memory (LSTM) neural network to foreca
 
 - **Actual vs Predicted** revenue plots
 
-![alt text](image-2.png)
+![alt text](plots/image-2.png)
 
 - **Loss curves** over training epochs
 
-![alt text](image-3.png)
+![alt text](plots/image-3.png)
 
 - **Error distribution** visualization
 
@@ -124,9 +124,9 @@ The **XGBoost** model demonstrated strong performance in predicting **daily reve
 
 ### ⚖️ Comparison to Baseline
 
-![alt text](image.png)
+![alt text](plots/image.png)
 
-![alt text](image-1.png)
+![alt text](plots/image-1.png)
 
 - The XGBoost model **clearly outperforms naive baselines** like:
   - **Last-value persistence**
