@@ -8,7 +8,13 @@
 ### 🔄 Preprocessing Steps:
 - **Data Resampling:** Aggregated sales data to daily frequency (`df_daily`).
 - **Stationarity Check:** Conducted the Augmented Dickey-Fuller (ADF) test to confirm non-stationarity.
+
+![alt text](image-7.png)
+
 - **Differencing:** Applied first-order differencing (`d=1`) to make the time series stationary and suitable for ARIMA modeling.
+
+![alt text](image-8.png)
+
 - **Validation Approach:** Used **walk-forward validation** with an expanding training window on the last **30 days** of data.
 
 ### 📈 Evaluation Metrics:
@@ -22,6 +28,8 @@
 - ARIMA(1,1,1) provided a **strong baseline forecast** with low percentage error (MAPE).
 - It effectively modeled the **overall trend** in the data but may underperform on sudden spikes or irregular patterns due to its linear nature.
 - Walk-forward validation ensured realistic performance estimation on unseen data.
+
+![alt text](image-6.png)
 
 
 ## 🧠 LSTM-Based Time Series Forecasting
@@ -42,6 +50,9 @@ This project implements a Long Short-Term Memory (LSTM) neural network to foreca
   - Lag features: `revenue_lag1`, `revenue_lag7`, `revenue_lag30`
   - Rolling statistics: `rolling_mean_7`, `rolling_std_7`, `rolling_mean_30`
   - `cumulative_revenue`, `dayofweek`, and `is_weekend`
+
+  ![alt text](image-4.png)
+  ![alt text](image-5.png)
 - One-hot encoding for categorical features
 
 ### 🧮 Model Architecture
@@ -68,7 +79,13 @@ This project implements a Long Short-Term Memory (LSTM) neural network to foreca
 ### 📌 Graphs
 
 - **Actual vs Predicted** revenue plots
+
+![alt text](image-2.png)
+
 - **Loss curves** over training epochs
+
+![alt text](image-3.png)
+
 - **Error distribution** visualization
 
 
@@ -106,6 +123,10 @@ The **XGBoost** model demonstrated strong performance in predicting **daily reve
 
 
 ### ⚖️ Comparison to Baseline
+
+![alt text](image.png)
+
+![alt text](image-1.png)
 
 - The XGBoost model **clearly outperforms naive baselines** like:
   - **Last-value persistence**
